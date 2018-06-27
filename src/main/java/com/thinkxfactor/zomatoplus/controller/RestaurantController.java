@@ -9,19 +9,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thinkxfactor.zomatoplus.models.Restaurant;
 import com.thinkxfactor.zomatoplus.models.User;
 import com.thinkxfactor.zomatoplus.repository.UserRepository;
 
 @RestController
-@RequestMapping("/user")
-public class UserController{
+@RequestMapping("/restaurant")
+public class RestaurantController{
 	@Autowired
 	private UserRepository userRepository;
 	
 	
 	@PostMapping("/add")
-	public User addUser(@RequestBody User user) {
-		User persistedUser=userRepository.save(user);
+	public User addURestaurant(@RequestBody Restaurant restaurant) {
+		User persistedRestaurant=userRepository.save(user);
 		return persistedUser;
 	}
 	@GetMapping("/getAll")
